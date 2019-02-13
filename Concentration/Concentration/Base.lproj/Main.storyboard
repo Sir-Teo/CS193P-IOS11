@@ -150,7 +150,7 @@
                                                         <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                         <connections>
-                                                            <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OA5-eR-iea"/>
+                                                            <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wUB-L0-HvP"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w3b-NC-Qsr">
@@ -158,7 +158,7 @@
                                                         <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                         <connections>
-                                                            <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="U6b-kA-w83"/>
+                                                            <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JKy-Hx-SwF"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xtx-Tw-EBA">
@@ -166,7 +166,7 @@
                                                         <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                         <connections>
-                                                            <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kyB-eh-6Uj"/>
+                                                            <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nIV-ki-mhs"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xvl-jK-ugA">
@@ -174,7 +174,7 @@
                                                         <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                         <connections>
-                                                            <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Ot-hA-zw6"/>
+                                                            <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hjt-ji-xt0"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -209,6 +209,10 @@
                         <outletCollection property="cardButtons" destination="DTV-Ui-MYI" collectionClass="NSMutableArray" id="RUR-ue-h1u"/>
                         <outletCollection property="cardButtons" destination="fg9-dA-sK4" collectionClass="NSMutableArray" id="DTi-hR-re7"/>
                         <outletCollection property="cardButtons" destination="2ro-5d-Ray" collectionClass="NSMutableArray" id="CIY-X5-qtW"/>
+                        <outletCollection property="cardButtons" destination="h4q-LY-sAL" collectionClass="NSMutableArray" id="dMv-GA-A2G"/>
+                        <outletCollection property="cardButtons" destination="w3b-NC-Qsr" collectionClass="NSMutableArray" id="Ico-dI-1iY"/>
+                        <outletCollection property="cardButtons" destination="Xtx-Tw-EBA" collectionClass="NSMutableArray" id="lFr-1i-vQd"/>
+                        <outletCollection property="cardButtons" destination="xvl-jK-ugA" collectionClass="NSMutableArray" id="deA-xj-IXd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
