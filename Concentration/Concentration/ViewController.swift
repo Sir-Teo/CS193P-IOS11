@@ -28,6 +28,13 @@ class ViewController: UIViewController {
 	
     @IBAction func UIbutton(_ sender: UIButton) {
     }
+    
+    @IBAction func newGame (_ sender: UIButton) {
+        flipCount = 0
+        game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
+        updateViewFromModel()
+    }
+    
     @IBAction private func touchCard(_ sender: UIButton) {
 		flipCount += 1
 		if let cardNumber = cardButtons.index(of: sender) {
