@@ -32,7 +32,8 @@ class ViewController: UIViewController {
     @IBAction func newGame (_ sender: UIButton) {
         flipCount = 0
         game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
-        emojiChoices = halloweenEmojis
+        let emojiLibrary = [halloweenEmojis, faceEmojis, animalEmojis, plantEmojis,sportEmojis, carEmojis]
+        emojiChoices = emojiLibrary[emojiLibrary.count.arc4random]
         updateViewFromModel()
     }
     
@@ -60,7 +61,13 @@ class ViewController: UIViewController {
 		}
 		
 	}
+    
     let halloweenEmojis = ["🦇", "😱", "🙀", "😈", "🎃", "👻", "🍭", "🍬", "🍎"]
+    let faceEmojis = ["😢", "😭", "😋", "🥰", "😇", "🙃", "😂", "😃", "😌"]
+    let animalEmojis = ["🦋", "🐛", "🐌", "🦂", "🐍", "🦑", "🐙", "🐠", "🐳"]
+    let plantEmojis = ["🌵", "🎄", "🌳", "🌱", "🍀", "🎋", "🍄", "💐", "🌻"]
+    let sportEmojis = ["⚽️", "🏀", "🏈", "⚾️", "🥎", "🏐", "🏉", "🥏", "🎱"]
+    let carEmojis = ["🚗", "🚕", "🚙", "🚌", "🚎", "🏎", "🚓", "🚑", "🚒"]
     
 	private var emojiChoices = ["🦇", "😱", "🙀", "😈", "🎃", "👻", "🍭", "🍬", "🍎"]
 	
