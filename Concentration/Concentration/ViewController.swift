@@ -32,6 +32,7 @@ class ViewController: UIViewController {
     @IBAction func newGame (_ sender: UIButton) {
         flipCount = 0
         game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
+        emojiChoices = halloweenEmojis
         updateViewFromModel()
     }
     
@@ -59,7 +60,8 @@ class ViewController: UIViewController {
 		}
 		
 	}
-	
+    let halloweenEmojis = ["🦇", "😱", "🙀", "😈", "🎃", "👻", "🍭", "🍬", "🍎"]
+    
 	private var emojiChoices = ["🦇", "😱", "🙀", "😈", "🎃", "👻", "🍭", "🍬", "🍎"]
 	
 	private var emoji = [Int: String]()
