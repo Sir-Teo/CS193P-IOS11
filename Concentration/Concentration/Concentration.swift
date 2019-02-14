@@ -31,6 +31,7 @@ class Concentration {
 	
 	func chooseCard(at index: Int) {
 		assert(cards.indices.contains(index), "Concentration.chooseCard(at: \(index)) : Choosen index out of range")
+        cards[index].isPreviouslySeened = true
 		if !cards[index].isMatched {
 			if let matchIndex = indexOfOneAndOnlyFaceUpCard, matchIndex != index {
 				// check if cards match

@@ -21,8 +21,15 @@ class ViewController: UIViewController {
 		}
 	}
 	
+    private(set) var score = 0 {
+        didSet {
+            scoreLabel.text = "Score: \(score)"
+        }
+    }
+    
 	@IBOutlet private weak var flipCountLabel: UILabel!
-	
+    @IBOutlet weak var scoreLabel: UILabel!
+    
 	@IBOutlet private var cardButtons: [UIButton]!
 	
 	
@@ -31,6 +38,7 @@ class ViewController: UIViewController {
     
     @IBAction func newGame (_ sender: UIButton) {
         flipCount = 0
+        score = 0
         game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
         let emojiLibrary = [halloweenEmojis, faceEmojis, animalEmojis, plantEmojis,sportEmojis, carEmojis]
         emojiChoices = emojiLibrary[emojiLibrary.count.arc4random]
@@ -40,7 +48,13 @@ class ViewController: UIViewController {
     @IBAction private func touchCard(_ sender: UIButton) {
 		flipCount += 1
 		if let cardNumber = cardButtons.index(of: sender) {
+            if game.cards[cardNumber].isPreviouslySeened {
+                score -= 1
+            }
 			game.chooseCard(at: cardNumber)
+            if game.cards[cardNumber].isMatched {
+                score += 2
+            }
 			updateViewFromModel()
 		} else {
 			print("choosen card was not in cardButtons")
