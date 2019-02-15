@@ -23,4 +23,13 @@ class Set {
     init() {
         
     }
+    
+    func dealThreeCards() {
+        
+    }
+    
+    func isMatched() -> Bool {
+        
+    }
+    
 }

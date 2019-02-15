@@ -10,7 +10,8 @@ import Foundation
 
 class Card {
     
-    var strip: String
+    // 3 * 3 * 3 * 3 = 81 possibilities
+    var strip: String 
     var shape: String
     var number: String
     var color: String
