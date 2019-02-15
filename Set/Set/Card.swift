@@ -22,6 +22,13 @@ class Card {
         self.number = number
         self.color = color
     }
-    
 }
 
+extension Card: Equatable {
+    static func == (lhs: Card, rhs: Card) -> Bool {
+        return
+            lhs.number == rhs.number &&
+                lhs.strip == rhs.strip &&
+                lhs.shape == rhs.shape && lhs.color == rhs.color
+    }
+}

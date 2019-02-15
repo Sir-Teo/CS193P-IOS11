@@ -26,16 +26,19 @@ class Set {
     }
     
     init() {
-        for _ in 1...12{
-            
+        let card = Card(strip: stripChoices[3.arc4random], shape: shapeChoices[3.arc4random], number: 3.arc4random, color: colorChoices[3.arc4random])
+        while self.cards.count <= 12{
+            if !(self.cards.contains(card)){
+                self.cards += [card]
+            }
         }
     }
     
     
-    func dealThreeCards() {
-        
-    }
-    
+//    func dealThreeCards() {
+//
+//    }
+//
 //    func isMatched() -> Bool {
 //
 //    }
