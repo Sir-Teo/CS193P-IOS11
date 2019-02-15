@@ -15,12 +15,15 @@ class Card {
     var shape: String
     var number: Int
     var color: String
+    var isSelected = false
+    var identifier = 0
     
-    init(strip: String, shape: String, number: Int, color: String) {
+    init(strip: String, shape: String, number: Int, color: String, identifier: Int) {
         self.strip = strip
         self.shape = shape
         self.number = number
         self.color = color
+        self.identifier = identifier
     }
 }
 

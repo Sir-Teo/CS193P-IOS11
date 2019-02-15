@@ -10,21 +10,28 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    
+    private lazy var game = Set()
     
     @IBOutlet var cardButtons: [UIButton]!
     
     @IBAction func touchCard(_ sender: UIButton) {
+            
         
     }
     
     @IBAction func newGame(_ sender: UIButton) {
+        
     }
     
     @IBAction func dealThreeCards(_ sender: UIButton) {
     }
     
     @IBAction func cheat(_ sender: UIButton) {
+        
+    }
+    
+    func updateViewFromModel() {
+        
     }
     
 }
