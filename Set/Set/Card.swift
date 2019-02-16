@@ -25,6 +25,8 @@ class Card {
         self.color = color
         self.identifier = identifier
     }
+    
+    public var description: String { return "Card: strip:\(self.strip), shape:\(self.shape), number: \(self.number), color: \(self.color), identifier: \(self.identifier)" }
 }
 
 extension Card: Equatable {

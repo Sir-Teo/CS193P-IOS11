@@ -27,7 +27,7 @@ class Set {
     
     init() {
         var identifierFactory = 1
-        while self.cards.count <= 12{
+        while self.cards.count < 12{
             let card = Card(strip: stripChoices[3.arc4random], shape: shapeChoices[3.arc4random], number: 3.arc4random, color: colorChoices[3.arc4random], identifier: identifierFactory)
             if !(self.cards.contains(card)){
                 self.cards += [card]
