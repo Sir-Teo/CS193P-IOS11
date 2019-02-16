@@ -36,31 +36,38 @@ class Set {
         }
     }
     
-    func chooseCard(at index: Int){
-        if !cards[index].isSelected {
-            if self.selectedCards.count < 3{
-                self.selectedCards += [cards[index]]
-                cards[index].isSelected = true
-            }
-        }
-        else {
-            self.selectedCards = self.selectedCards.filter {$0 != cards[index]}
-            cards[index].isSelected = false
-        }
-    }
-    
     
 //    func dealThreeCards() {
 //
 //    }
 //
-//    func isMatched() -> Bool {
-//
-//    }
-//
+    func isMatched() -> Bool {
+        var colors = [String]()
+        var shapes = [String]()
+        var numbers = [Int]()
+        var strips = [String]()
+        if selectedCards.count == 3{
+            for card in selectedCards{
+                if !colors.contains(card.color){
+                    colors += [card.color]
+                }
+                if !shapes.contains(card.shape){
+                    shapes += [card.shape]
+                }
+                if !numbers.contains(card.number){
+                    numbers += [card.number]
+                }
+                if !strips.contains(card.strip){
+                    strips += [card.strip]
+                }
+            }
+        }
+        return colors.count + shapes.count + numbers.count + strips.count == 10
+    }
+
 }
 
-extension Int {
+public extension Int {
     var arc4random: Int {
         if self > 0{
             return Int(arc4random_uniform(UInt32(self)))

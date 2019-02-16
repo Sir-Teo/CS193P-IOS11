@@ -19,13 +19,11 @@ class ViewController: UIViewController {
         let buttonIndex = cardButtons.firstIndex(of: sender)!
         if let cardIndex = usingButtonsIndices.firstIndex(of: buttonIndex){
             if game.cards[cardIndex].isSelected == true{
-                print("true")
                 game.cards[cardIndex].isSelected = false
                 cardButtons[buttonIndex].layer.borderWidth = 0
                 game.selectedCards = game.selectedCards.filter {$0 != game.cards[cardIndex] }
             }
             else{
-                print("false")
                 game.cards[cardIndex].isSelected = true
                 cardButtons[buttonIndex].layer.borderWidth = 3.0
                 cardButtons[buttonIndex].layer.borderColor = UIColor.blue.cgColor
@@ -37,6 +35,9 @@ class ViewController: UIViewController {
                     let removedSelectionCardIndex = game.cards.firstIndex(of: removedSelectionCard)!
                     cardButtons[usingButtonsIndices[removedSelectionCardIndex]].layer.borderWidth = 0
                 }
+            }
+            if game.isMatched(){
+                print("holy cow")
             }
         }
     }
@@ -62,9 +63,9 @@ class ViewController: UIViewController {
             var alpha: CGFloat
             switch game.cards[i].strip{
             case "a":
-                alpha = 0.2
+                alpha = 0.15
             case "b":
-                alpha = 0.8
+                alpha = 0.5
             default:
                 alpha = 1.0
             }
