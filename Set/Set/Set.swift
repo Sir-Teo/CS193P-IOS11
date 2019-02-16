@@ -19,6 +19,8 @@ class Set {
     private let stripChoices = ["a", "b", "c"]
     private let numberChoices = [1 ,2, 3]
     
+    var identifierFactory = 1
+    
     func chooseCard(index: Int) {
         if selectedCards.count < 3 {
             self.selectedCards += [self.cards[index]]
@@ -26,7 +28,6 @@ class Set {
     }
     
     init() {
-        var identifierFactory = 1
         while self.cards.count < 12{
             let card = Card(strip: stripChoices[3.arc4random], shape: shapeChoices[3.arc4random], number: numberChoices[3.arc4random], color: colorChoices[3.arc4random], identifier: identifierFactory)
             if !(self.cards.contains(card)){
@@ -37,17 +38,18 @@ class Set {
     }
     
     
-//    func dealThreeCards() {
-//
-//    }
-//
-    func isMatched() -> Bool {
+    func dealThreeCards() {
+
+    }
+
+    
+    func isMatched(threeCards:[Card]) -> Bool {
         var colors = [String]()
         var shapes = [String]()
         var numbers = [Int]()
         var strips = [String]()
-        if selectedCards.count == 3{
-            for card in selectedCards{
+        if threeCards.count == 3{
+            for card in threeCards{
                 if !colors.contains(card.color){
                     colors += [card.color]
                 }
@@ -77,6 +79,23 @@ public extension Int {
         }
         else {
             return 0
+        }
+    }
+}
+
+extension Array {
+    var combinations: [[Element]] {
+        if count == 0 {
+            return [self]
+        }
+        else {
+            let tail = Array(self[1..<endIndex])
+            let head = self[0]
+            
+            let first = tail.combinations
+            let rest = first.map { $0 + [head] }
+            
+            return first + rest
         }
     }
 }

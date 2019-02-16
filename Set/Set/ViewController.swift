@@ -36,7 +36,7 @@ class ViewController: UIViewController {
                     cardButtons[usingButtonsIndices[removedSelectionCardIndex]].layer.borderWidth = 0
                 }
             }
-            if game.isMatched(){
+            if game.isMatched(threeCards: game.selectedCards){
                 print("holy cow")
             }
         }
@@ -86,11 +86,26 @@ class ViewController: UIViewController {
     }
     
     @IBAction func cheat(_ sender: UIButton) {
-        
+        var possible = [Card]()
+        let combinations = game.cards.combinations.filter {$0.count == 3}
+        for c in combinations{
+            if game.isMatched(threeCards: c){
+                possible = c
+                break
+            }
+        }
+        let indices = possible.map {game.cards.firstIndex(of: $0)}
+        for index in indices{
+            cardButtons[usingButtonsIndices[index!]].layer.borderWidth = 3.0
+            cardButtons[usingButtonsIndices[index!]].layer.borderColor = UIColor.blue.cgColor
+            cardButtons[usingButtonsIndices[index!]].layer.cornerRadius = 8.0
+        }
     }
     
     func updateViewFromModel() {
-        
+        if game.isMatched(threeCards: game.selectedCards){
+            
+        }
     }
     
 }
