@@ -24,6 +24,14 @@ class Card {
         self.number = number
         self.color = color
         self.identifier = identifier
+        switch number {
+        case 2:
+            self.shape = "\(self.shape)\(self.shape)"
+        case 3:
+            self.shape = "\(self.shape)\(self.shape)\(self.shape)"
+        default:
+            break
+        }
     }
     
     public var description: String { return "Card: strip:\(self.strip), shape:\(self.shape), number: \(self.number), color: \(self.color), identifier: \(self.identifier)" }

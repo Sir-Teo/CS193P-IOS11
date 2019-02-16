@@ -15,7 +15,7 @@ class Set {
     private(set) var selectedCards = [Card]()
     
     private let colorChoices = ["Red", "Blue", "Green"]
-    private let shapeChoices = ["Square", "Circle", "Triangle"]
+    private let shapeChoices = ["■", "●", "▲"]
     private let stripChoices = ["a", "b", "c"]
     private let numberChoices = [1 ,2, 3]
     
@@ -28,7 +28,7 @@ class Set {
     init() {
         var identifierFactory = 1
         while self.cards.count < 12{
-            let card = Card(strip: stripChoices[3.arc4random], shape: shapeChoices[3.arc4random], number: 3.arc4random, color: colorChoices[3.arc4random], identifier: identifierFactory)
+            let card = Card(strip: stripChoices[3.arc4random], shape: shapeChoices[3.arc4random], number: numberChoices[3.arc4random], color: colorChoices[3.arc4random], identifier: identifierFactory)
             if !(self.cards.contains(card)){
                 self.cards += [card]
                 identifierFactory += 1

@@ -23,6 +23,7 @@ class ViewController: UIViewController {
     @IBAction func newGame(_ sender: UIButton) {
         for button in cardButtons{
             button.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+            button.setTitle(" ", for: UIControl.State.normal)
         }
         usingButtonsIndices = [Int]()
         game = Set()
@@ -32,6 +33,29 @@ class ViewController: UIViewController {
                 cardButtons[randomIndex].backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
                 usingButtonsIndices += [randomIndex]
             }
+        }
+        for i in 0...11{
+            let shape = game.cards[i].shape
+            var color: UIColor
+            var alpha: CGFloat
+            switch game.cards[i].strip{
+            case "a":
+                alpha = 0.2
+            case "b":
+                alpha = 0.8
+            default:
+                alpha = 1.0
+            }
+            switch game.cards[i].color{
+            case "Red":
+                color = UIColor(red: 222/255.0, green: 0/255.0, blue: 0/255.0, alpha: alpha)
+            case "Blue":
+                color = UIColor(red: 0/255.0, green: 0/255.0, blue: 222/255.0, alpha: alpha)
+            default:
+                color = UIColor(red: 76/255.0, green: 170/255.0, blue: 0/255.0, alpha: alpha)
+            }
+            cardButtons[usingButtonsIndices[i]].setTitle(shape, for: UIControl.State.normal)
+            cardButtons[usingButtonsIndices[i]].setTitleColor(color, for: UIControl.State.normal)
         }
     }
     
