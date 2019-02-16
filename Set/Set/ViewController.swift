@@ -16,12 +16,18 @@ class ViewController: UIViewController {
     @IBOutlet var cardButtons: [UIButton]!
     
     @IBAction func touchCard(_ sender: UIButton) {
-            
-        
+        let buttonIndex = cardButtons.firstIndex(of: sender)!
+        if let cardIndex = usingButtonsIndices.firstIndex(of: buttonIndex){
+            game.cards[cardIndex].isSelected = true
+            cardButtons[buttonIndex].layer.borderWidth = 3.0
+            cardButtons[buttonIndex].layer.borderColor = UIColor.blue.cgColor
+            cardButtons[buttonIndex].layer.cornerRadius = 8.0
+        }
     }
     
     @IBAction func newGame(_ sender: UIButton) {
         for button in cardButtons{
+            button.layer.borderWidth = 0
             button.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
             button.setTitle(" ", for: UIControl.State.normal)
         }
@@ -67,7 +73,7 @@ class ViewController: UIViewController {
     }
     
     func updateViewFromModel() {
-        
+
     }
     
 }
