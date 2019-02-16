@@ -12,7 +12,7 @@ class Set {
     
     private(set) var cards = [Card]()
     
-    private(set) var selectedCards = [Card]()
+    var selectedCards = [Card]()
     
     private let colorChoices = ["Red", "Blue", "Green"]
     private let shapeChoices = ["■", "●", "▲"]

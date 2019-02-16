@@ -18,10 +18,26 @@ class ViewController: UIViewController {
     @IBAction func touchCard(_ sender: UIButton) {
         let buttonIndex = cardButtons.firstIndex(of: sender)!
         if let cardIndex = usingButtonsIndices.firstIndex(of: buttonIndex){
-            game.cards[cardIndex].isSelected = true
-            cardButtons[buttonIndex].layer.borderWidth = 3.0
-            cardButtons[buttonIndex].layer.borderColor = UIColor.blue.cgColor
-            cardButtons[buttonIndex].layer.cornerRadius = 8.0
+            if game.cards[cardIndex].isSelected == true{
+                print("true")
+                game.cards[cardIndex].isSelected = false
+                cardButtons[buttonIndex].layer.borderWidth = 0
+                game.selectedCards = game.selectedCards.filter {$0 != game.cards[cardIndex] }
+            }
+            else{
+                print("false")
+                game.cards[cardIndex].isSelected = true
+                cardButtons[buttonIndex].layer.borderWidth = 3.0
+                cardButtons[buttonIndex].layer.borderColor = UIColor.blue.cgColor
+                cardButtons[buttonIndex].layer.cornerRadius = 8.0
+                game.selectedCards += [game.cards[cardIndex]]
+                if game.selectedCards.count > 3{
+                    let removedSelectionCard = game.selectedCards.remove(at: 0)
+                    removedSelectionCard.isSelected = false
+                    let removedSelectionCardIndex = game.cards.firstIndex(of: removedSelectionCard)!
+                    cardButtons[usingButtonsIndices[removedSelectionCardIndex]].layer.borderWidth = 0
+                }
+            }
         }
     }
     
@@ -73,7 +89,7 @@ class ViewController: UIViewController {
     }
     
     func updateViewFromModel() {
-
+        
     }
     
 }
