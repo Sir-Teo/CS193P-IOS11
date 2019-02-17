@@ -36,6 +36,7 @@ class ViewController: UIViewController {
                     cardButtons[usingButtonsIndices[removedSelectionCardIndex]].layer.borderWidth = 0
                 }
             }
+            updateViewFromModel()
             if game.isMatched(threeCards: game.selectedCards){
                 print("holy cow")
             }
@@ -50,6 +51,10 @@ class ViewController: UIViewController {
         }
         usingButtonsIndices = [Int]()
         game = Set()
+        dealNCards(number: 12)
+    }
+    
+    func dealNCards(number: Int){
         while usingButtonsIndices.count < 12 {
             let randomIndex = cardButtons.count.arc4random
             if !usingButtonsIndices.contains( randomIndex ){
@@ -104,7 +109,19 @@ class ViewController: UIViewController {
     
     func updateViewFromModel() {
         if game.isMatched(threeCards: game.selectedCards){
-            
+            let indices = game.selectedCards.map {game.cards.firstIndex(of: $0)}
+            var cards = [Card]()
+            for index in indices{
+                cards += [game.cards[index!]]
+                cardButtons[usingButtonsIndices[index!]].layer.borderWidth = 0
+                cardButtons[usingButtonsIndices[index!]].setTitle(" ", for: UIControl.State.normal)
+                cardButtons[usingButtonsIndices[index!]].backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+            }
+            for card in cards{
+                game.cards = game.cards.filter {$0 != card}
+            }
+            print(game.cards)
+            game.selectedCards.removeAll()
         }
     }
     

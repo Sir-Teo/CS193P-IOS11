@@ -10,7 +10,7 @@ import Foundation
 
 class Set {
     
-    private(set) var cards = [Card]()
+    var cards = [Card]()
     
     var selectedCards = [Card]()
     
