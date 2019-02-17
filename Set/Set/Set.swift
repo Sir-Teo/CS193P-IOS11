@@ -11,6 +11,8 @@ import Foundation
 class Set {
     
     var cards = [Card]()
+    var usedCards = [Card]()
+    var newThreeCards = [Card]()
     
     var selectedCards = [Card]()
     
@@ -39,7 +41,14 @@ class Set {
     
     
     func dealThreeCards() {
-
+        while self.newThreeCards.count < 3{
+            let card = Card(strip: stripChoices[3.arc4random], shape: shapeChoices[3.arc4random], number: numberChoices[3.arc4random], color: colorChoices[3.arc4random], identifier: identifierFactory)
+            if !(self.cards.contains(card) && self.usedCards.contains(card)){
+                self.cards += [card]
+                self.newThreeCards += [card]
+                identifierFactory += 1
+            }
+        }
     }
 
     
