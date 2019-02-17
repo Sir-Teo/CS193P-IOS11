@@ -37,9 +37,6 @@ class ViewController: UIViewController {
                 }
             }
             updateViewFromModel()
-            if game.isMatched(threeCards: game.selectedCards){
-                print("holy cow")
-            }
         }
     }
     
@@ -116,8 +113,8 @@ class ViewController: UIViewController {
             default:
                 color = UIColor(red: 76/255.0, green: 170/255.0, blue: 0/255.0, alpha: alpha)
             }
-            cardButtons[usingButtonsIndices[length - flag]].setTitle(shape, for: UIControl.State.normal)
-            cardButtons[usingButtonsIndices[length - flag]].setTitleColor(color, for: UIControl.State.normal)
+            //cardButtons[usingButtonsIndices[]].setTitle(shape, for: UIControl.State.normal)
+            //cardButtons[usingButtonsIndices[]].setTitleColor(color, for: UIControl.State.normal)
         }
     }
     
@@ -143,11 +140,10 @@ class ViewController: UIViewController {
             let indices = game.selectedCards.map {game.cards.firstIndex(of: $0)}
             var cards = [Card]()
             for index in indices{
-                cards += [game.cards[index!]]
                 cardButtons[usingButtonsIndices[index!]].layer.borderWidth = 0
                 cardButtons[usingButtonsIndices[index!]].setTitle(" ", for: UIControl.State.normal)
                 cardButtons[usingButtonsIndices[index!]].backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-                usingButtonsIndices = usingButtonsIndices.filter {$0 != index}
+                cards += [game.cards[index!]]
             }
             for card in cards{
                 game.usedCards += [card]
