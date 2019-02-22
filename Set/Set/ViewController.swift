@@ -83,37 +83,39 @@ class ViewController: UIViewController {
     
     
     @IBAction func dealThreeCards(_ sender: UIButton) {
-        game.dealThreeCards()
-        let currentNumberOfCards = usingButtonsIndices.count
-        while usingButtonsIndices.count < currentNumberOfCards + 3 {
-            let randomIndex = cardButtons.count.arc4random
-            if !usingButtonsIndices.contains( randomIndex ){
-                cardButtons[randomIndex].backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-                usingButtonsIndices += [randomIndex]
+        if (usingButtonsIndices.count > 0 && usingButtonsIndices.count < 23) {
+            game.dealThreeCards()
+            let currentNumberOfCards = usingButtonsIndices.count
+            while usingButtonsIndices.count < currentNumberOfCards + 3 {
+                let randomIndex = cardButtons.count.arc4random
+                if !usingButtonsIndices.contains( randomIndex ){
+                    cardButtons[randomIndex].backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+                    usingButtonsIndices += [randomIndex]
+                }
             }
-        }
-        for i in currentNumberOfCards-1...currentNumberOfCards+2 {
-            let shape = game.cards[i].shape
-            var color: UIColor
-            var alpha: CGFloat
-            switch game.cards[i].strip{
-            case "a":
-                alpha = 0.15
-            case "b":
-                alpha = 0.5
-            default:
-                alpha = 1.0
+            for i in currentNumberOfCards-1...currentNumberOfCards+2 {
+                let shape = game.cards[i].shape
+                var color: UIColor
+                var alpha: CGFloat
+                switch game.cards[i].strip{
+                case "a":
+                    alpha = 0.15
+                case "b":
+                    alpha = 0.5
+                default:
+                    alpha = 1.0
+                }
+                switch game.cards[i].color{
+                case "Red":
+                    color = UIColor(red: 222/255.0, green: 0/255.0, blue: 0/255.0, alpha: alpha)
+                case "Blue":
+                    color = UIColor(red: 0/255.0, green: 0/255.0, blue: 222/255.0, alpha: alpha)
+                default:
+                    color = UIColor(red: 76/255.0, green: 170/255.0, blue: 0/255.0, alpha: alpha)
+                }
+                cardButtons[usingButtonsIndices[i]].setTitle(shape, for: UIControl.State.normal)
+                cardButtons[usingButtonsIndices[i]].setTitleColor(color, for: UIControl.State.normal)
             }
-            switch game.cards[i].color{
-            case "Red":
-                color = UIColor(red: 222/255.0, green: 0/255.0, blue: 0/255.0, alpha: alpha)
-            case "Blue":
-                color = UIColor(red: 0/255.0, green: 0/255.0, blue: 222/255.0, alpha: alpha)
-            default:
-                color = UIColor(red: 76/255.0, green: 170/255.0, blue: 0/255.0, alpha: alpha)
-            }
-            cardButtons[usingButtonsIndices[i]].setTitle(shape, for: UIControl.State.normal)
-            cardButtons[usingButtonsIndices[i]].setTitleColor(color, for: UIControl.State.normal)
         }
     }
     
