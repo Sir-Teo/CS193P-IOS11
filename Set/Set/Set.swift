@@ -49,6 +49,7 @@ class Set {
                 identifierFactory += 1
             }
         }
+        self.newThreeCards.removeAll()
     }
 
     
