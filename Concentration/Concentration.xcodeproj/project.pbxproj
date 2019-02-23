@@ -301,7 +301,7 @@
 				DEVELOPMENT_TEAM = XWSC5H5Q3W;
 				INFOPLIST_FILE = Concentration/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "zengwc.teo2016-outlook.com";
+				PRODUCT_BUNDLE_IDENTIFIER = "zengwc.teo2016-outlook.com.concentration";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -316,7 +316,7 @@
 				DEVELOPMENT_TEAM = XWSC5H5Q3W;
 				INFOPLIST_FILE = Concentration/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "zengwc.teo2016-outlook.com";
+				PRODUCT_BUNDLE_IDENTIFIER = "zengwc.teo2016-outlook.com.concentration";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
