@@ -14,10 +14,11 @@
 		3BBE6DD71FF7CE25001EC047 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BBE6DD51FF7CE25001EC047 /* LaunchScreen.storyboard */; };
 		3BBE6DE31FF7D319001EC047 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBE6DE21FF7D319001EC047 /* Card.swift */; };
 		3BBE6DE51FF7D6AC001EC047 /* SetEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBE6DE41FF7D6AC001EC047 /* SetEngine.swift */; };
+		ABA4F00B2223ABAD0069DC3F /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA4F00A2223ABAD0069DC3F /* Grid.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3BBE6DC91FF7CE25001EC047 /* Set.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Set.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BBE6DC91FF7CE25001EC047 /* Graphical_Set.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Graphical_Set.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BBE6DCC1FF7CE25001EC047 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BBE6DCE1FF7CE25001EC047 /* SetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetViewController.swift; sourceTree = "<group>"; };
 		3BBE6DD11FF7CE25001EC047 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -26,6 +27,7 @@
 		3BBE6DD81FF7CE25001EC047 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BBE6DE21FF7D319001EC047 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		3BBE6DE41FF7D6AC001EC047 /* SetEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetEngine.swift; sourceTree = "<group>"; };
+		ABA4F00A2223ABAD0069DC3F /* Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +52,7 @@
 		3BBE6DCA1FF7CE25001EC047 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3BBE6DC91FF7CE25001EC047 /* Set.app */,
+				3BBE6DC91FF7CE25001EC047 /* Graphical_Set.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -81,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				3BBE6DE21FF7D319001EC047 /* Card.swift */,
+				ABA4F00A2223ABAD0069DC3F /* Grid.swift */,
 				3BBE6DE41FF7D6AC001EC047 /* SetEngine.swift */,
 			);
 			path = Models;
@@ -97,9 +100,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3BBE6DC81FF7CE25001EC047 /* Set */ = {
+		3BBE6DC81FF7CE25001EC047 /* Graphical_Set */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3BBE6DDB1FF7CE25001EC047 /* Build configuration list for PBXNativeTarget "Set" */;
+			buildConfigurationList = 3BBE6DDB1FF7CE25001EC047 /* Build configuration list for PBXNativeTarget "Graphical_Set" */;
 			buildPhases = (
 				3BBE6DC51FF7CE25001EC047 /* Sources */,
 				3BBE6DC61FF7CE25001EC047 /* Frameworks */,
@@ -109,9 +112,9 @@
 			);
 			dependencies = (
 			);
-			name = Set;
+			name = Graphical_Set;
 			productName = Set;
-			productReference = 3BBE6DC91FF7CE25001EC047 /* Set.app */;
+			productReference = 3BBE6DC91FF7CE25001EC047 /* Graphical_Set.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -130,7 +133,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3BBE6DC41FF7CE25001EC047 /* Build configuration list for PBXProject "Set" */;
+			buildConfigurationList = 3BBE6DC41FF7CE25001EC047 /* Build configuration list for PBXProject "Graphical_Set" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -143,7 +146,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3BBE6DC81FF7CE25001EC047 /* Set */,
+				3BBE6DC81FF7CE25001EC047 /* Graphical_Set */,
 			);
 		};
 /* End PBXProject section */
@@ -169,6 +172,7 @@
 				3BBE6DE51FF7D6AC001EC047 /* SetEngine.swift in Sources */,
 				3BBE6DCF1FF7CE25001EC047 /* SetViewController.swift in Sources */,
 				3BBE6DE31FF7D319001EC047 /* Card.swift in Sources */,
+				ABA4F00B2223ABAD0069DC3F /* Grid.swift in Sources */,
 				3BBE6DCD1FF7CE25001EC047 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,7 +339,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3BBE6DC41FF7CE25001EC047 /* Build configuration list for PBXProject "Set" */ = {
+		3BBE6DC41FF7CE25001EC047 /* Build configuration list for PBXProject "Graphical_Set" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3BBE6DD91FF7CE25001EC047 /* Debug */,
@@ -344,7 +348,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3BBE6DDB1FF7CE25001EC047 /* Build configuration list for PBXNativeTarget "Set" */ = {
+		3BBE6DDB1FF7CE25001EC047 /* Build configuration list for PBXNativeTarget "Graphical_Set" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3BBE6DDC1FF7CE25001EC047 /* Debug */,
