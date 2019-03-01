@@ -42,7 +42,9 @@ class Set {
     
     
     func dealThreeCards() {
-        
+        for _ in 1...3 {
+            cards += [deck.remove(at: 81.arc4random)]
+        }
     }
 
     

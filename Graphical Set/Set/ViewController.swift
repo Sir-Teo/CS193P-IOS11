@@ -20,14 +20,12 @@ class ViewController: UIViewController {
         if let cardIndex = usingButtonsIndices.firstIndex(of: buttonIndex){
             if game.cards[cardIndex].isSelected == true{
                 game.cards[cardIndex].isSelected = false
-                cardButtons[buttonIndex].layer.borderWidth = 0
+                unChangeCardBorder(button: cardButtons[buttonIndex])
                 game.selectedCards = game.selectedCards.filter {$0 != game.cards[cardIndex] }
             }
             else{
                 game.cards[cardIndex].isSelected = true
-                cardButtons[buttonIndex].layer.borderWidth = 3.0
-                cardButtons[buttonIndex].layer.borderColor = UIColor.blue.cgColor
-                cardButtons[buttonIndex].layer.cornerRadius = 8.0
+                changeCardBorder(button: cardButtons[buttonIndex])
                 game.selectedCards += [game.cards[cardIndex]]
                 if game.selectedCards.count > 3{
                     let removedSelectionCard = game.selectedCards.remove(at: 0)
@@ -40,27 +38,29 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func newGame(_ sender: UIButton) {
+    func changeCardBorder(button: UIButton){
+        button.layer.borderWidth = 3.0
+        button.layer.borderColor = UIColor.blue.cgColor
+        button.layer.cornerRadius = 8.0
+    }
+    
+    func unChangeCardBorder(button: UIButton){
+        button.layer.borderWidth = 0
+    }
+    
+    func drawCards(){
         for button in cardButtons{
             button.layer.borderWidth = 0
             button.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
             button.setTitle(" ", for: UIControl.State.normal)
             button.layer.cornerRadius = 0
         }
-        usingButtonsIndices = [Int]()
-        game = Set()
-        while usingButtonsIndices.count < 12 {
-            let randomIndex = cardButtons.count.arc4random
-            if !usingButtonsIndices.contains( randomIndex ){
-                cardButtons[randomIndex].backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-                usingButtonsIndices += [randomIndex]
-            }
-        }
-        for i in 0...11{
-            let shape = game.cards[i].shape
+        var tempIndex = 0
+        for card in game.cards{
+            let shape = card.shape
             var color: UIColor
             var alpha: CGFloat
-            switch game.cards[i].strip{
+            switch card.strip{
             case "a":
                 alpha = 0.15
             case "b":
@@ -68,7 +68,7 @@ class ViewController: UIViewController {
             default:
                 alpha = 1.0
             }
-            switch game.cards[i].color{
+            switch card.color{
             case "Red":
                 color = UIColor(red: 222/255.0, green: 0/255.0, blue: 0/255.0, alpha: alpha)
             case "Blue":
@@ -76,9 +76,15 @@ class ViewController: UIViewController {
             default:
                 color = UIColor(red: 76/255.0, green: 170/255.0, blue: 0/255.0, alpha: alpha)
             }
-            cardButtons[usingButtonsIndices[i]].setTitle(shape, for: UIControl.State.normal)
-            cardButtons[usingButtonsIndices[i]].setTitleColor(color, for: UIControl.State.normal)
+            cardButtons[tempIndex].setTitle(shape, for: UIControl.State.normal)
+            cardButtons[tempIndex].setTitleColor(color, for: UIControl.State.normal)
+            tempIndex += 1
         }
+    }
+    
+    @IBAction func newGame(_ sender: UIButton) {
+        game = Set()
+        drawCards()
     }
     
     
@@ -130,9 +136,7 @@ class ViewController: UIViewController {
         }
         let indices = possible.map {game.cards.firstIndex(of: $0)}
         for index in indices{
-            cardButtons[usingButtonsIndices[index!]].layer.borderWidth = 3.0
-            cardButtons[usingButtonsIndices[index!]].layer.borderColor = UIColor.blue.cgColor
-            cardButtons[usingButtonsIndices[index!]].layer.cornerRadius = 8.0
+            changeCardBorder(button: cardButtons[usingButtonsIndices[index!]])
         }
     }
     
@@ -141,7 +145,7 @@ class ViewController: UIViewController {
             let indices = game.selectedCards.map {game.cards.firstIndex(of: $0)}
             var cards = [Card]()
             for index in indices{
-                cardButtons[usingButtonsIndices[index!]].layer.borderWidth = 0
+                unChangeCardBorder(button: cardButtons[usingButtonsIndices[index!]])
                 cardButtons[usingButtonsIndices[index!]].setTitle(" ", for: UIControl.State.normal)
                 cardButtons[usingButtonsIndices[index!]].backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
                 cards += [game.cards[index!]]
