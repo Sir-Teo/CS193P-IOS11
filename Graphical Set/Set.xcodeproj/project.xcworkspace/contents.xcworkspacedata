@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Users/teo/Developer/GitHub/CS193P-IOS11/Graphical_Set/Graphical_Set.xcodeproj">
+      location = "self:Set.xcodeproj">
    </FileRef>
 </Workspace>

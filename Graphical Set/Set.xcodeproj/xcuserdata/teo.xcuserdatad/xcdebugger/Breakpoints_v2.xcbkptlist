@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Set/ViewController.swift"
+            timestampString = "572541033.411931"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "ViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Set.ViewController.(game in _944BFFC9082082AE9ED86E6A7172A529).getter : Set.Set"
+                  moduleName = "Set"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/teo/Developer/GitHub/CS193P-IOS11/Set/Set/ViewController.swift"
+                  timestampString = "572080418.6604559"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "168">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Set.ViewController.(game in _944BFFC9082082AE9ED86E6A7172A529).setter : Set.Set"
+                  moduleName = "Set"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/teo/Developer/GitHub/CS193P-IOS11/Set/Set/ViewController.swift"
+                  timestampString = "572080418.662403"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "140">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Set.ViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Set.ViewController"
+                  moduleName = "Set"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/teo/Developer/GitHub/CS193P-IOS11/Set/Set/ViewController.swift"
+                  timestampString = "572080418.664418"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Set.ViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Set.ViewController&gt;"
+                  moduleName = "Set"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/teo/Developer/GitHub/CS193P-IOS11/Set/Set/ViewController.swift"
+                  timestampString = "572080418.666128"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "52">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
