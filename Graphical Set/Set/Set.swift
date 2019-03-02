@@ -35,15 +35,17 @@ class Set {
                 }
             }
         }
-        while self.cards.count < 12{
-            cards += [deck.remove(at: 81.arc4random)]
+        for _ in 1...12{
+            let card = deck.remove(at: deck.count.arc4random)
+            cards += [card]
         }
     }
     
     
     func dealThreeCards() {
-        for _ in 1...3 {
-            cards += [deck.remove(at: 81.arc4random)]
+        for _ in 1...3{
+            let card = deck.remove(at: deck.count.arc4random)
+            cards += [card]
         }
     }
 
