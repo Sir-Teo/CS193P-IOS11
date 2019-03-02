@@ -10,12 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    private lazy var game = Set()
+    private lazy var game = Graphical_Set()
     
     @IBOutlet var cardButtons: [UIButton]!
     
     @IBAction func touchCard(_ sender: UIButton) {
-        if let cardIndex = cardButtons.firstIndex(of: sender)!{
+        if let cardIndex = cardButtons.firstIndex(of: sender){
+            if game.cards.count > cardIndex{
             if game.cards[cardIndex].isSelected == true{
                 game.cards[cardIndex].isSelected = false
                 unChangeCardBorder(button: cardButtons[cardIndex])
@@ -33,6 +34,7 @@ class ViewController: UIViewController {
                 }
             }
             updateViewFromModel()
+            }
         }
     }
     
@@ -82,7 +84,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func newGame(_ sender: UIButton) {
-        game = Set()
+        game = Graphical_Set()
         drawCards()
     }
     
@@ -118,6 +120,11 @@ class ViewController: UIViewController {
                 cards += [game.cards[index!]]
             }
             game.selectedCards.removeAll()
+            for card in cards{
+                let index = game.cards.firstIndex(of: card)
+                game.cards.remove(at: index!)
+            }
+            drawCards()
         }
     }
     

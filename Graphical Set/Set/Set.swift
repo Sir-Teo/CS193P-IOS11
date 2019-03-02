@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Set {
+class Graphical_Set {
     var cards = [Card]()
     var deck = [Card]()
     
@@ -71,7 +71,8 @@ class Set {
                 }
             }
         }
-        return (colors.count + shapes.count + numbers.count + strips.count == 10) && (colors.count == 1 || shapes.count == 1 || numbers.count == 1 || strips.count == 1)
+        return (colors.count + shapes.count + numbers.count + strips.count == 10) && (colors.count != 2 && shapes.count != 2 && numbers.count != 2 && strips.count != 2)
+        
     }
 
 }
@@ -104,5 +105,11 @@ extension Array {
             
             return first + rest
         }
+    }
+}
+
+extension Array where Element : Hashable {
+    var unique: [Element] {
+        return Array(Set(self))
     }
 }
