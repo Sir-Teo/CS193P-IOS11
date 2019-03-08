@@ -35,17 +35,22 @@ class Graphical_Set {
                 }
             }
         }
+    }
+
+    
+    func dealTwelveCards() {
         for _ in 1...12{
             let card = deck.remove(at: deck.count.arc4random)
             cards += [card]
         }
     }
     
-    
     func dealThreeCards() {
-        for _ in 1...3{
-            let card = deck.remove(at: deck.count.arc4random)
-            cards += [card]
+        if cards.count < 21{
+            for _ in 1...3{
+                let card = deck.remove(at: deck.count.arc4random)
+                cards += [card]
+            }
         }
     }
 
@@ -105,11 +110,5 @@ extension Array {
             
             return first + rest
         }
-    }
-}
-
-extension Array where Element : Hashable {
-    var unique: [Element] {
-        return Array(Set(self))
     }
 }

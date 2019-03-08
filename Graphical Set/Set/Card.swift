@@ -8,38 +8,78 @@
 
 import Foundation
 
-class Card {
+struct Card{
     
-    // 3 * 3 * 3 * 3 = 81 possibilities
-    var strip: String  
-    var shape: String
-    var number: Int
-    var color: String
-    var isSelected = false
     
-    init(strip: String, shape: String, number: Int, color: String) {
-        self.strip = strip
-        self.shape = shape
-        self.number = number
-        self.color = color
-        switch number {
-        case 2:
-            self.shape = "\(self.shape)\(self.shape)"
-        case 3:
-            self.shape = "\(self.shape)\(self.shape)\(self.shape)"
-        default:
-            break
-        }
+    var color: Color
+    var number: Number
+    var shape: Shape
+    var fill: Fill
+    
+    lazy var matrix = [color.rawValue, number.rawValue, shape.rawValue, fill.rawValue]
+    
+    enum Color: String, CustomStringConvertible {
+        case red = "red"
+        case green = "green"
+        case purple = "purple"
+        var description: String { return rawValue }
+        static let all = [Color.red, .green, .purple]
+        
     }
     
-    public var description: String { return "Card: strip:\(self.strip), shape:\(self.shape), number: \(self.number), color: \(self.color)" }
+    enum Number: Int, CustomStringConvertible {
+        
+        case one = 1
+        case two
+        case three
+        var description: String { return String(rawValue) }
+        static let all = [Number.one, .two, .three]
+    }
+    
+    enum Shape: String, CustomStringConvertible {
+        case circle = "circle"
+        case square = "square"
+        case triangle = "triangle"
+        var description: String { return rawValue }
+        static let all = [Shape.circle, .square, .triangle]
+    }
+    
+    enum Fill: String, CustomStringConvertible {
+        case solid = "solid"
+        case stripe = "stripe"
+        case empty = "empty"
+        var description: String { return rawValue }
+        static let all = [Fill.solid, .stripe, .empty]
+    }
+    
+    init(with c: Color, _ n: Number, _ s: Shape, _ f: Fill) {
+        color = c
+        number = n
+        shape = s
+        fill = f
+    }
+    
 }
 
-extension Card: Equatable {
-    static func == (lhs: Card, rhs: Card) -> Bool {
-        return
-            lhs.number == rhs.number &&
-                lhs.strip == rhs.strip &&
-                lhs.shape == rhs.shape && lhs.color == rhs.color
+extension Card: CustomStringConvertible {
+    
+    var description: String {
+        return "color: \(color) number: \(number) shpae: \(shape) fill: \(fill)\n"
     }
+    
 }
+
+extension Card: Equatable{
+    
+    static func ==(lhs: Card, rhs: Card) -> Bool {
+        return lhs.color == rhs.color &&
+            lhs.shape == rhs.shape &&
+            lhs.number == rhs.number &&
+            lhs.fill == rhs.fill
+    }
+    
+    
+    
+    
+}
+
