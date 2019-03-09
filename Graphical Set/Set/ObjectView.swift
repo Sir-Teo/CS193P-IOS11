@@ -57,15 +57,15 @@ class ObjectView: UIView {
         path.addClip()
         
         
-        var objectColor: UIColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
+        var objectColor: UIColor = #colorLiteral(red: 0.5791940689, green: 0.1280144453, blue: 0.5726861358, alpha: 1)
         if let color = color {
             switch color {
             case .green:
-                objectColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+                objectColor = #colorLiteral(red: 0, green: 0.9768045545, blue: 0, alpha: 1)
             case .purple:
-                objectColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
+                objectColor = #colorLiteral(red: 0.5791940689, green: 0.1280144453, blue: 0.5726861358, alpha: 1)
             case .red:
-                objectColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
+                objectColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
             }
         }
         
